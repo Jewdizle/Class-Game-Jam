@@ -677,6 +677,17 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: -8990757408390382577, guid: a6cf05b3f4b27a84fac89804ce888b88,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 527253713870924589, guid: 50e17ae69ef8f8049b2f49753091b9d9,
+        type: 3}
+    - target: {fileID: -7792352876886575361, guid: a6cf05b3f4b27a84fac89804ce888b88,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 834f21b52eee16d4da0d4d23b86ccedf, type: 2}
     - target: {fileID: -4216859302048453862, guid: a6cf05b3f4b27a84fac89804ce888b88,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -732,17 +743,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8990757408390382577, guid: a6cf05b3f4b27a84fac89804ce888b88,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 527253713870924589, guid: 50e17ae69ef8f8049b2f49753091b9d9,
-        type: 3}
-    - target: {fileID: -7792352876886575361, guid: a6cf05b3f4b27a84fac89804ce888b88,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 834f21b52eee16d4da0d4d23b86ccedf, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6cf05b3f4b27a84fac89804ce888b88, type: 3}
 --- !u!4 &1529968007 stripped

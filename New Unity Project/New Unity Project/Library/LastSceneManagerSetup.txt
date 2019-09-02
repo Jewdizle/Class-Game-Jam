@@ -1,0 +1,5 @@
+sceneSetups:
+- path: D:/git/ClassGameJam/Class Game Jam/New Unity Project/Assets/Scenes/Zero.unity
+  isLoaded: 1
+  isActive: 1
+  isSubScene: 0

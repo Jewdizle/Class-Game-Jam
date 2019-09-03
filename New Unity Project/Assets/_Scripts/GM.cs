@@ -21,6 +21,7 @@ public class GM : MonoBehaviour
     public GameObject star;
 
     private Vector3 starPosition;
+    private bool starspawned;
 
     private void Start()
     {
@@ -30,6 +31,12 @@ public class GM : MonoBehaviour
     private void Update()
     {
         checkForWinner();
+
+        if (starspawned == true)
+        {
+            starspawned = false;
+            Invoke("SpawnCollectableThing", 3);
+        }
     }
 
     public void checkForWinner()
@@ -50,5 +57,6 @@ public class GM : MonoBehaviour
         starPosition.z = Random.Range(-10f, 10f);
 
         cloneStar = Instantiate(star, new Vector3(starPosition.x, starPosition.y, starPosition.z), Quaternion.identity);
+        starspawned = true;
     }
 }

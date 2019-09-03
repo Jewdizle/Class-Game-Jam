@@ -1,9 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GM : MonoBehaviour
 {
+
+    public GameObject playerWins;
+    public Text playerWinsText;
+
+    public int requiredScoreToWin;
+
     int scoreRed;
     int scoreBlue;
     int scoreYellow;
@@ -39,22 +46,32 @@ public class GM : MonoBehaviour
         }
     }
 
+
     public void checkForWinner()
     {
         foreach(ship s in ships)
         {
-            if(s.score >= 1)
+            if(s.score >= requiredScoreToWin)
             {
                 winner = s.p.ToString();
+                playerWinsText.text = winner + " wins!";
+                playerWins.SetActive(true);
+                Invoke("Reset", 3);
             }
+
         }
+    }
+
+    private void Reset()
+    {
+        Application.LoadLevel(Application.loadedLevel);
     }
 
     public void SpawnCollectableThing()
     {
-        starPosition.x = Random.Range(-19f, 19f);
+        starPosition.x = Random.Range(-18f, 18f);
         starPosition.y = 0.36f;
-        starPosition.z = Random.Range(-10f, 10f);
+        starPosition.z = Random.Range(-9f, 9f);
 
         cloneStar = Instantiate(star, new Vector3(starPosition.x, starPosition.y, starPosition.z), Quaternion.identity);
         starspawned = true;

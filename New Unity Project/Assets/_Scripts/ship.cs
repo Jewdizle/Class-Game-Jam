@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum players
 {
@@ -16,6 +17,7 @@ public class ship : MonoBehaviour
     public KeyCode actionButton;
     private bool rotateDirection = true;
     public int score;
+    public Text scoreText;
 
     void Start()
     {
@@ -64,12 +66,13 @@ public class ship : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Collectable")
         {
             score++;
             Destroy(other.gameObject);
+            scoreText.text = ""+ score;
         }
     }
 }

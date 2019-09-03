@@ -11,16 +11,6 @@ public class GM : MonoBehaviour
 
     public int requiredScoreToWin;
 
-    int scoreRed;
-    int scoreBlue;
-    int scoreYellow;
-    int scoreGreen;
-
-    public ship redShip;
-    public ship blueShip;
-    public ship yellowShip;
-    public ship greenShip;
-
     public List<ship> ships;
     public string winner;
 
@@ -69,9 +59,9 @@ public class GM : MonoBehaviour
 
     public void SpawnCollectableThing()
     {
-        starPosition.x = Random.Range(-18f, 18f);
+        starPosition.x = Random.Range(-17f, 17f);
         starPosition.y = 0.36f;
-        starPosition.z = Random.Range(-9f, 9f);
+        starPosition.z = Random.Range(-8f, 8f);
 
         cloneStar = Instantiate(star, new Vector3(starPosition.x, starPosition.y, starPosition.z), Quaternion.identity);
         starspawned = true;

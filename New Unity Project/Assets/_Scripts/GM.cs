@@ -28,12 +28,11 @@ public class GM : MonoBehaviour
     private void Update()
     {
         checkForWinner();
-
-        if (starspawned == true)
-        {
-            starspawned = false;
-            Invoke("SpawnCollectableThing", 3);
-        }
+            if (starspawned == true)
+            {
+                starspawned = false;
+                Invoke("SpawnCollectableThing", 1.5f);
+            }
     }
 
 

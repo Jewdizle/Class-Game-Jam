@@ -10,6 +10,10 @@ public enum players
 
 public class ship : MonoBehaviour
 {
+    public GameObject crashParticles;
+    public GameObject collectParticles;
+    // "active" is required to prevent the ships from collecting stars or spinning at the start of the game.
+    private bool active = false;
     public players p;
     public float rotateSpeed;
     public float speed;
@@ -42,37 +46,61 @@ public class ship : MonoBehaviour
 
     void Update()
     {
-        //MOVE
-        if (Input.GetKey(actionButton))
+        if (Input.GetKeyDown(actionButton))
         {
-            rb.AddForce(transform.forward * -speed);
+            active = true;
         }
-        //ROTATE
-        else
+
+        if (active == true)
         {
-            if (rotateDirection == true)
+            //MOVE
+            if (Input.GetKey(actionButton))
             {
-                gameObject.transform.Rotate(0, rotateSpeed, 0);
+                rb.AddForce(transform.forward * -speed);
             }
-            else if (rotateDirection == false)
+            //ROTATE
+            else
             {
-                gameObject.transform.Rotate(0, -rotateSpeed, 0);
+                if (rotateDirection == true)
+                {
+                    gameObject.transform.Rotate(0, -rotateSpeed, 0);
+                }
+                else if (rotateDirection == false)
+                {
+                    gameObject.transform.Rotate(0, rotateSpeed, 0);
+                }
             }
-        }
-        //REVERSE ROTATION OF SHIP
-        if(Input.GetKeyDown(actionButton))
-        {
-            rotateDirection = !rotateDirection;
+            //REVERSE ROTATION OF SHIP
+            if (Input.GetKeyDown(actionButton))
+            {
+                rotateDirection = !rotateDirection;
+            }
+
+            if (Input.GetKey(KeyCode.R))
+            {
+                Application.LoadLevel(Application.loadedLevel);
+            }
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Collectable")
+        if (active == true)
         {
-            score++;
-            Destroy(other.gameObject);
-            scoreText.text = ""+ score;
+            if (other.gameObject.tag == "Collectable")
+            {
+                score++;
+                Destroy(other.gameObject);
+                scoreText.text = "" + score;
+                Instantiate(collectParticles, transform.position, Quaternion.identity);
+            }
         }
     }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        SceneCamera.instance.shakeDuration = 0.2f;
+        Instantiate(crashParticles, transform.position, Quaternion.identity);
+    }
+   
 }

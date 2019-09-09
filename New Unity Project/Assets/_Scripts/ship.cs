@@ -24,7 +24,12 @@ public class ship : MonoBehaviour
     public int score;
     public Text scoreText;
     public GameObject bullet;
-    private Vector3 rotation;
+
+    float x;
+    float z;
+    public float radius;
+    
+
 
     void Start()
     {
@@ -86,8 +91,18 @@ public class ship : MonoBehaviour
 
             if (Input.GetKeyUp(actionButton))
             {
-                Instantiate(bullet, transform.position + new Vector3(0f, 1f, 0f), transform.rotation);
+                float rotation = transform.rotation.y * Mathf.Rad2Deg;
+
+                x = Mathf.Sin(rotation) * radius;
+                z = Mathf.Cos(rotation) * radius;
+
+                Debug.Log(x);
+                Debug.Log(z);
+
+                Instantiate(bullet, new Vector3((transform.position.x + x), transform.localPosition.y, (transform.position.z + z)), transform.rotation);
+
             }
+                
         }
     }
 

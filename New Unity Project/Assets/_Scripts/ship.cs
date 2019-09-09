@@ -93,12 +93,6 @@ public class ship : MonoBehaviour
             {
                 float rotation = transform.rotation.y * Mathf.Rad2Deg;
 
-                x = Mathf.Sin(rotation) * radius;
-                z = Mathf.Cos(rotation) * radius;
-
-                Debug.Log(x);
-                Debug.Log(z);
-
                 Instantiate(bullet, new Vector3((transform.position.x + x), transform.localPosition.y, (transform.position.z + z)), transform.rotation);
 
             }

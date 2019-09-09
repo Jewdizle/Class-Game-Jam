@@ -1,5 +1,6 @@
 sceneSetups:
-- path: Assets/Scenes/Zero.unity
+- path: D:/OneDrive/Documents/School/Yoobee/Year 1 Game Art & Dev/03_Programming/pong/BrickBreaker/New
+    Unity Project/Assets/Scenes/One.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

@@ -389,6 +389,7 @@ MonoBehaviour:
   actionButton: 0
   score: 0
   scoreText: {fileID: 1540566912}
+  bullet: {fileID: 1650126507548548603, guid: 07e27df511bee8a44b35380d8101ede7, type: 3}
 --- !u!65 &83887292
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1351,6 +1352,7 @@ MonoBehaviour:
   actionButton: 0
   score: 0
   scoreText: {fileID: 1851064535}
+  bullet: {fileID: 1650126507548548603, guid: 07e27df511bee8a44b35380d8101ede7, type: 3}
 --- !u!54 &922425886
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6833,6 +6835,7 @@ MonoBehaviour:
   actionButton: 0
   score: 0
   scoreText: {fileID: 853167349}
+  bullet: {fileID: 1650126507548548603, guid: 07e27df511bee8a44b35380d8101ede7, type: 3}
 --- !u!54 &1529968010
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7080,6 +7083,7 @@ MonoBehaviour:
   actionButton: 0
   score: 0
   scoreText: {fileID: 64126837}
+  bullet: {fileID: 1650126507548548603, guid: 07e27df511bee8a44b35380d8101ede7, type: 3}
 --- !u!54 &1545414172
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7828,6 +7832,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: -7792352876886575361, guid: b5098d0394a7d68428a1987c2dac5017,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f3cd95d4615a4ee459b7a4b352219a04, type: 2}
     - target: {fileID: -4216859302048453862, guid: b5098d0394a7d68428a1987c2dac5017,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7883,11 +7892,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -7792352876886575361, guid: b5098d0394a7d68428a1987c2dac5017,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: f3cd95d4615a4ee459b7a4b352219a04, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b5098d0394a7d68428a1987c2dac5017, type: 3}
 --- !u!1 &1893495637

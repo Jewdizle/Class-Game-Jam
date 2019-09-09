@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public enum players
 {
@@ -22,6 +23,8 @@ public class ship : MonoBehaviour
     private bool rotateDirection = true;
     public int score;
     public Text scoreText;
+    public GameObject bullet;
+    private Vector3 rotation;
 
     void Start()
     {
@@ -78,7 +81,12 @@ public class ship : MonoBehaviour
 
             if (Input.GetKey(KeyCode.R))
             {
-                Application.LoadLevel(Application.loadedLevel);
+                SceneManager.LoadScene(0);
+            }
+
+            if (Input.GetKeyUp(actionButton))
+            {
+                Instantiate(bullet, transform.position + new Vector3(0f, 1f, 0f), transform.rotation);
             }
         }
     }
@@ -102,5 +110,4 @@ public class ship : MonoBehaviour
         SceneCamera.instance.shakeDuration = 0.2f;
         Instantiate(crashParticles, transform.position, Quaternion.identity);
     }
-   
 }
